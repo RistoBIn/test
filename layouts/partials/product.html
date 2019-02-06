@@ -11,18 +11,20 @@
                 <p>{{ .eur }} &#8364/hr</p>
             </div>
 
-            <div class="card-action" >
-                <button
-                class="snipcart-add-item waves-effect waves-light btn"
-                data-item-id="{{ .id }}"
-                data-item-name="{{ .name }}"
-                data-item-image="{{ .image }}"
-                data-item-price="{{ .usd }}"
-                data-item-url="{{ .url }}">
-                    <i class="material-icons right">shopping_cart</i>
-                    Add to cart
-            </button>
+            <div class="card-action" id="shop-cart">
+                
             </div>
         </div> 
     </div>
 </div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+ <script type="text/javascript">
+    document.getElementById("shop-cart").innerHTML = '<button class="snipcart-add-item waves-effect waves-light btn"  data-item-id="{{ .id }}" data-item-name="{{ .name }}" data-item-image="{{ .image }}" data-item-price="{{.usd}}" data-item-url="{{ .url }}"> <i class="material-icons right">shopping_cart</i> Add to cart </button>'
+    $('#currency').change(function() {
+        if ($(this).val() == "usd") {
+            document.getElementById("shop-cart").innerHTML = '<button class="snipcart-add-item waves-effect waves-light btn"  data-item-id="{{ .id }}" data-item-name="{{ .name }}" data-item-image="{{ .image }}" data-item-price="{{.usd}}" data-item-url="{{ .url }}"> <i class="material-icons right">shopping_cart</i> Add to cart </button>'
+        } else if ($(this).val() == "eur") {
+            document.getElementById("shop-cart").innerHTML = '<button class="snipcart-add-item waves-effect waves-light btn"  data-item-id="{{ .id }}" data-item-name="{{ .name }}" data-item-image="{{ .image }}" data-item-price="{{.eur}}" data-item-url="{{ .url }}"> <i class="material-icons right">shopping_cart</i> Add to cart </button>'
+        }
+      });
+</script>
