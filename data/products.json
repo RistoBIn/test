@@ -1,0 +1,37 @@
+[{
+    "id": "1",
+    "name": "Web Development",
+    "price": 30,
+    "image": "/images/web-dev.jpg",
+    "description": "Website development service",
+    "url": "http://risto-service-ecommerce.netlify.com"
+}, {
+    "id": "2",
+    "name": "Data Science- Python",
+    "description": "Data Scrap & Visualization",
+    "price": 30,
+    "image": "/images/images.jpg",
+    "url": "http://risto-service-ecommerce.netlify.com"
+},{
+    "id": "3",
+    "name": "Data Science- ML & DL",
+    "price": 35,
+    "image": "/images/ml-dl.jpg",
+    "description": "Website development service",
+    "url": "http://risto-service-ecommerce.netlify.com"
+}, {
+    "id": "4",
+    "name": "Data Science- R",
+    "description": "Data Analyse & Visualization",
+    "price": 35,
+    "image": "/images/data-science.jpg",
+    "url": "http://risto-service-ecommerce.netlify.com"
+},{
+    "id": "5",
+    "name": "Data Science- Jupyter",
+    "price": 35,
+    "image": "/images/jupyter.jpg",
+    "description": "Website development service",
+    "url": "http://risto-service-ecommerce.netlify.com"
+}
+]
