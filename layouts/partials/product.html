@@ -1,25 +1,29 @@
-<div class="col s6">
-    <h2 class="header">{{ .name }}</h2>
-    <div class="card horizontal">
+<div class="col-md-6 col-sm-6 col-xs-12">
+    <div class="card horizontal" style="text-align: center;">
+        <h2 class="card-header">{{ .name }}</h2>
         <div class="card-image">
-        <img src="{{ .image }}">
+            <img src="{{ .image }}">
         </div>
         <div class="card-stacked">
-        <div class="card-content">
-            <p>{{ .description }}</p>
-        </div>
-        <div class="card-action">
-            <button
-                class="snipcart-add-item waves-effect waves-light btn"
-                data-item-id="{{ .id }}"
-                data-item-name="{{ .name }}"
-                data-item-image="{{ .image }}"
-                data-item-price="{{ .price }}"
-                data-item-url="{{ .url }}">
-                    <i class="material-icons right">shopping_cart</i>
-                    Add to cart
-            </button>
-        </div>
-        </div>
+            <div class="card-content">
+                <p>{{ .description }}</p>
+                <p>{{ .usd }} $/hr</p>
+                <p>{{ .eur }} &#8364/hr</p>
+            </div>
+
+            <div class="card-action" id="{{ .id }}">
+            </div>
+        </div> 
     </div>
 </div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+ <script type="text/javascript">
+    document.getElementById("{{ .id }}").innerHTML = '<button class="snipcart-add-item waves-effect waves-light btn"  data-item-id="{{ .id }}" data-item-name="{{ .name }}" data-item-image="{{ .image }}" data-item-price="{{.usd}}" data-item-url="{{ .url }}"> <i class="material-icons right">shopping_cart</i> Add to cart </button>'
+    $('#currency').change(function() {
+        if ($(this).val() == "usd") {
+            document.getElementById("{{ .id }}").innerHTML = '<button class="snipcart-add-item waves-effect waves-light btn"  data-item-id="{{ .id }}" data-item-name="{{ .name }}" data-item-image="{{ .image }}" data-item-price="{{.usd}}" data-item-url="{{ .url }}"> <i class="material-icons right">shopping_cart</i> Add to cart </button>'
+        } else if ($(this).val() == "eur") {
+            document.getElementById("{{ .id }}").innerHTML = '<button class="snipcart-add-item waves-effect waves-light btn"  data-item-id="{{ .id }}" data-item-name="{{ .name }}" data-item-image="{{ .image }}" data-item-price="{{.eur}}" data-item-url="{{ .url }}"> <i class="material-icons right">shopping_cart</i> Add to cart </button>'
+        }
+      });
+</script>

@@ -2,7 +2,11 @@
 
 {{ $products := getJSON "/data/products.json" }}
 
-<section class="container">
+<section class="container" id="product-list">
+	<select id="currency">
+	  <option value="usd">USD</option>
+	  <option value="eur">EUR</option>
+	</select>
 	<div class="row">
 		{{ range $products }}
 			{{ partial "product.html" . }}
